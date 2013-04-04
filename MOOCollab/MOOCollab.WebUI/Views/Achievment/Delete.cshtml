@@ -1,0 +1,38 @@
+@model MOOCollab.Domain.Achievment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Achievment</legend>
+
+    <div class="display-label">DateAwarded</div>
+    <div class="display-field">@String.Format("{0:g}", Model.DateAwarded)</div>
+
+    <div class="display-label">AwardType</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.AwardType).ToString()</div>
+
+    <div class="display-label">Student</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Student).ToString()</div>
+
+    <div class="display-label">Course</div>
+    <div class="display-field">@(Model.Course == null ? "None" : Model.Course.Title)</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">Comments</div>
+    <div class="display-field">@Model.Comments</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

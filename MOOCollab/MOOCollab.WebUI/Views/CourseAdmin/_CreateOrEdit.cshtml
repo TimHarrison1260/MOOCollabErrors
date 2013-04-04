@@ -1,0 +1,32 @@
+@model CourseInstructorViewModel
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Course.Title)
+   
+    @Html.HiddenFor(model=>model.Course.Id)
+    @Html.HiddenFor(model=>model.Course.OwnerId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Course.Title)
+    @Html.ValidationMessageFor(model => model.Course.Title)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Course.Resume)
+</div>
+<div class="editor-field">
+    @Html.TextAreaFor(model => model.Course.Resume)
+    @Html.ValidationMessageFor(model => model.Course.Resume)
+</div>
+
+<div class="editor-label">
+    @(Model.Course.Status == true ? "Opened" : "Closed")
+    @Html.HiddenFor(model=>model.Course.Status)
+</div>
+
+
+    @Html.DisplayFor(model=>model.GroupSummaries)
+
+

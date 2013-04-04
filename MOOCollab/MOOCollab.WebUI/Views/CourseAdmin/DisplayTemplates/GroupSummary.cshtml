@@ -1,0 +1,25 @@
+﻿@model MOOCollab.WebUI.DTOs.GroupSummary
+
+<fieldset style="display: inline-block" class="feature">
+    <legend>GroupSummary</legend>
+    @Html.HiddenFor(model=>model.Id)
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Members)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Members)
+    </div>
+
+    <div class="display-label">
+        @(Model.Status == true?"Opened":"Closed")
+        @Html.HiddenFor(model=>model.Status)
+    </div>
+   
+</fieldset>

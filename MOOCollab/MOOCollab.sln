@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOOCollab.UnitTests", "MOOCollab.UnitTests\MOOCollab.UnitTests.csproj", "{47673F91-6715-430E-B989-F9BE0F589A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOOCollab.Domain", "MOOCollab.Domain\MOOCollab.Domain.csproj", "{09BE2337-98A6-4230-8BA0-35C93C24A474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOOCollab.DataAccess", "MOOCollab.DataAccess\MOOCollab.DataAccess.csproj", "{CF47974E-A054-47C3-94BF-310891726671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOOCollab.WebUI", "MOOCollab.WebUI\MOOCollab.WebUI.csproj", "{A9E8862A-297F-4134-8469-ACC8880DF0BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C4300B8-473A-4009-BFCA-09302514A608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOOCollab.Contracts", "MOOCollab.Contracts\MOOCollab.Contracts.csproj", "{49F22CAE-2137-4BAD-861C-A37CE4278FFE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://gcuwebsysdev.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = MOOCollab.UnitTests\\MOOCollab.UnitTests.csproj
+		SccProjectName0 = MOOCollab.UnitTests
+		SccLocalPath0 = MOOCollab.UnitTests
+		SccProjectUniqueName1 = MOOCollab.Domain\\MOOCollab.Domain.csproj
+		SccProjectName1 = MOOCollab.Domain
+		SccLocalPath1 = MOOCollab.Domain
+		SccProjectUniqueName2 = MOOCollab.DataAccess\\MOOCollab.DataAccess.csproj
+		SccProjectName2 = MOOCollab.DataAccess
+		SccLocalPath2 = MOOCollab.DataAccess
+		SccProjectUniqueName3 = MOOCollab.WebUI\\MOOCollab.WebUI.csproj
+		SccProjectName3 = MOOCollab.WebUI
+		SccLocalPath3 = MOOCollab.WebUI
+		SccProjectUniqueName4 = MOOCollab.Contracts\\MOOCollab.Contracts.csproj
+		SccProjectName4 = MOOCollab.Contracts
+		SccLocalPath4 = MOOCollab.Contracts
+		SccLocalPath5 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47673F91-6715-430E-B989-F9BE0F589A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47673F91-6715-430E-B989-F9BE0F589A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47673F91-6715-430E-B989-F9BE0F589A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47673F91-6715-430E-B989-F9BE0F589A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BE2337-98A6-4230-8BA0-35C93C24A474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BE2337-98A6-4230-8BA0-35C93C24A474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BE2337-98A6-4230-8BA0-35C93C24A474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BE2337-98A6-4230-8BA0-35C93C24A474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF47974E-A054-47C3-94BF-310891726671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF47974E-A054-47C3-94BF-310891726671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF47974E-A054-47C3-94BF-310891726671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF47974E-A054-47C3-94BF-310891726671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E8862A-297F-4134-8469-ACC8880DF0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E8862A-297F-4134-8469-ACC8880DF0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E8862A-297F-4134-8469-ACC8880DF0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E8862A-297F-4134-8469-ACC8880DF0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F22CAE-2137-4BAD-861C-A37CE4278FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F22CAE-2137-4BAD-861C-A37CE4278FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F22CAE-2137-4BAD-861C-A37CE4278FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F22CAE-2137-4BAD-861C-A37CE4278FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

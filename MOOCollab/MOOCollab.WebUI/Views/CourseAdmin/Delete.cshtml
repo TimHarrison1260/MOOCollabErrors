@@ -1,0 +1,38 @@
+@model CourseInstructorViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Course</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Course.Title</div>
+
+    <div class="display-label">Resume</div>
+    <div class="display-field">@Model.Course.Resume</div>
+
+    <div class="display-label">Status</div>
+    <div class="display-field">@(Model.Course.Status == true ? "Opened" : "Closed")</div>
+
+    <div class="display-label">Groups</div>
+    <div class="display-field">@(Model.Course.Groups == null ? "None" : Model.Course.Groups.Count.ToString())</div>
+    
+     <div class="display-label">Groups</div>
+    <div class="display-field">@Html.DisplayFor(model=>model.GroupSummaries)</div>
+
+    <div class="display-label">Students</div>
+    <div class="display-field">@(Model.Course.Students == null ? "None" : Model.Course.Students.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

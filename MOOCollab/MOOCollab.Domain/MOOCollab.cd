@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MOOCollab.Domain.Achievment">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAgIAAAAAAAAAIAAAAAAAAAAAAAAAACIAA=</HashCode>
+      <FileName>Achievment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AwardType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.Course">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAECMAAAAIEAAAAAAAIAAIAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Course.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.Group">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAGAACMAAAAAEAAAIACAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MOOCollab.Domain.Instructor">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <InheritanceLine Type="MOOCollab.Domain.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.312" Y="2.373" />
+        <Point X="3.312" Y="2.625" />
+        <Point X="3.5" Y="2.625" />
+        <Point X="3.5" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Courses" Type="MOOCollab.Domain.Course" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="3.499" />
+        <Point X="5.375" Y="3.499" />
+        <Point X="5.375" Y="2.024" />
+        <Point X="6" Y="2.024" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Instructor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Courses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.Message">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgIAgEAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Message.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Recipient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.Recipient">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAABAA=</HashCode>
+      <FileName>Recipient.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.Student">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="MOOCollab.Domain.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.875" Y="2.372" />
+        <Point X="2.875" Y="3.875" />
+        <Point X="3.125" Y="3.875" />
+        <Point X="3.125" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Achievments" Type="MOOCollab.Domain.Achievment" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="4.715" />
+        <Point X="1.562" Y="4.715" />
+        <Point X="1.562" Y="4.267" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAIAAAEAAAAAAAAEAAgAAAAAA=</HashCode>
+      <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Achievments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MOOCollab.Domain.User">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgCAAAAIAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MOOCollab.Domain.AwardType">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AwardType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MOOCollab.Domain.RecipientType">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAgAIAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecipientType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

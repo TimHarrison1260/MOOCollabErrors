@@ -1,0 +1,45 @@
+@model CourseInstructorViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Course</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Course.Title</div>
+
+    <div class="display-label">Resume</div>
+    <div class="display-field">@Model.Course.Resume</div>
+
+    <div class="display-label">Owner</div>
+    <div class="display-field">@Html.DisplayTextFor(model => model.Instructor.UserName).ToString()</div>
+
+    <div class="display-label">Status</div>
+    <div class="display-field">@(Model.Course.Status==true?"Opened":"Closed")</div>
+
+    <div class="display-label">Groups</div>
+    <div class="display-field">@Html.DisplayFor(model=>model.GroupSummaries)</div>
+
+    <div class="display-label">Students enrolled</div>
+    <div class="display-field">@(Model.Course.Students == null ? "None" : Model.Course.Students.Count.ToString())</div>
+    
+    
+    <div class="display-field">@Html.DisplayFor(m=>m.StudentInfos)</div>
+    <p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+    <div class="display-label">Messages</div>
+    <div class="display-field">@Html.DisplayFor(model=>model.MessageInfos)</div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Course.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,18 @@
+﻿@model MOOCollab.WebUI.ViewModels.MessageViewModel
+
+@{
+    ViewBag.Title = "My Messages";
+}
+
+<h2>My Messages</h2>
+
+@foreach (var message in Model.Messages) 
+@Html.DisplayFor(M => message)
+
+<h2>Post Message</h2>
+@Html.EditorFor(m => m.NewMessage)
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,35 @@
+﻿@model MOOCollab.WebUI.DTOs.MessageInfo
+
+<fieldset class="featured">
+    
+    <legend>MesssageInfo</legend>
+    @Html.HiddenFor(model=>model.Id)
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sender)
+    </div>
+    @Html.HiddenFor(model=>model.SenderId)
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DateSent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateSent)
+    </div>
+</fieldset>
+

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+}
+
+<div id="memberList" ></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //  Async call to load the partial view with data.
+        var urlAction = '@Url.Action("GroupFollowersList", "Followers", new { id = 9999 })'  // use a dummy numeric to resolve the url
+        var id = @Html.Raw(Json.Encode(@ViewBag.CourseOrGroupId));
+        var url = urlAction.replace(9999, id);
+        $.ajax({
+            url: url,
+            type: 'POST',
+            success: function (result) {
+                //  Load the result into the summaryList element.
+                $("#memberList").html(result);
+            }
+        });
+
+    });
+</script>
+

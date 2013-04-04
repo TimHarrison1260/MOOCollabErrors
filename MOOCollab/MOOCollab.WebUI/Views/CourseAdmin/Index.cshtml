@@ -1,0 +1,107 @@
+@model CourseAdminViewModel
+
+@{
+    ViewBag.Title = "Welcome " + User.Identity.Name ;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.ActionLink("Create","Create",new {id =Model.InstructorId})
+
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Title
+        </th>
+        <th>
+            Resume 
+        </th>
+        <th>
+            Owner
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Groups
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Courses) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+            <td>
+                @item.Title 
+            </td>
+            <td>
+                @item.Resume
+            </td>
+            <td>
+                @item.Owner.UserName
+            </td>
+            <td>
+                @(item.Status == true ? "Opened" : "Closed")
+            </td>
+            <td>
+                @(item.Groups == null ? "None" : item.Groups.Count.ToString())
+            </td>
+            <td>
+                @(item.Students == null ? "None" : item.Students.Count.ToString())
+            </td>
+        </tr>
+    }
+</table>
+
+
+@*pass instructor id to create viewmodel*@
+<aside class="feature float-left">
+    @foreach (var item in Model.UserMessages)
+    {
+        <article class="feature">
+            <h5>@item.Title</h5>
+            <section>
+                @item.Content
+            </section>
+            <footer>
+                @item.DateSent
+            </footer>
+        </article>
+    }
+</aside>
+<aside class="feature float-right">
+    <h3>Currently following</h3>
+    @foreach (var item in Model.Following)
+    {
+        <article class="feature">
+            <h5>@item.UserName</h5>
+          
+        </article>
+    }
+</aside>
+<section class="feature">
+    
+    @foreach (var item in Model.CourseMessages)
+    {
+        <article class="feature">
+            <h5>@item.Title</h5>
+            <section>
+                @item.Content
+            </section>
+            <footer>
+                @item.DateSent
+            </footer>
+        </article>
+    }
+</section>
+
+
+
+

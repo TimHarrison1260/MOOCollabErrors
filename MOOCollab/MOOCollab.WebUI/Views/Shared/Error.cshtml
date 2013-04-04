@@ -1,0 +1,67 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title" style="color: red">
+                <h1 class="error">Sorry!</h1>
+                <h2>Something didn't work properly.</h2>
+                <h2 class="error">  </h2>
+            </hgroup>
+            <p>
+                Take some chill time......MOOCollab has, so why don't you?
+            </p>
+        </div>
+    </section>
+}
+
+<div>
+            <p>
+                Best idea..... click <span id="exitLink" ></span> and try again.    
+            </p>
+            <p>
+                Alternatively, if you're feelin' brave, click 
+                <a id="showException" href="#" >here</a>, to see what sent wrong.
+            </p>        
+            <p>
+                Recommend you get a coffee first and breathe deeply..... it's not quite the end of the world....... yet!
+            </p>
+</div>
+
+
+<div id="exceptionInfo" style="border: 2px solid; border-color: red" >
+    <div>
+        @Html.DisplayNameFor(m => m.ControllerName)
+        @Html.DisplayFor(m => m.ControllerName)
+    </div>
+    <div>
+        @Html.DisplayNameFor(m => m.ActionName)
+        @Html.DisplayFor(m => m.ActionName)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(m => m.Exception)
+        @Html.DisplayFor(m => m.Exception)
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //  Set up event handlers.
+        $("#showException").click(function () {
+            $("#exceptionInfo").show();
+        });
+
+        //  Setup the link to exit this error page.
+        //  We're trying to avoid the WebSecurity related InvalidOperationExceptions 
+        //  because the localDB has timed out (I think this is the reason).
+        if ($('#logoutForm').length > 0) {
+            $('#exitLink').html('<a href="javascript:document.getElementById(\'logoutForm\').submit()">here to go Home</a>');
+        } else {
+            $('#exitLink').html('@Html.ActionLink("here to go Home", "Index", "Home")');
+        }
+
+        //  Hide the exception stuff.
+        $("#exceptionInfo").hide();
+    });
+</script>

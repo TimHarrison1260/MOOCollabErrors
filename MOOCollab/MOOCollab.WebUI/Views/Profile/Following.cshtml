@@ -1,0 +1,6 @@
+﻿@model MOOCollab.WebUI.ViewModels.ProfileViewModel
+
+<h2>Following</h2>
+
+@foreach (var following in Model.User.Following)
+    @Html.DisplayFor(f => following)

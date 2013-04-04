@@ -1,0 +1,42 @@
+﻿@model MOOCollab.WebUI.DTOs.StudentInfo
+
+<fieldset style="display: inline-block;" class="feature">
+    <legend>StudentInfo</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ImagePath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImagePath)
+    </div>
+    
+    <div>
+        Achievments
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m=>m.AchievmentSummaries)
+        
+    </div>
+    @Html.HiddenFor(model=>model.Id)
+
+</fieldset>
+
+<p>
+    
+  @Html.ActionLink("Award","Create" ,
+  new
+      {
+          controller = "Achievment", action = "Create",Id = Model.Id,
+          returnUrl = Request.Url.ToString(),courseId = Model.CourseId
+      },
+  null)
+   
+  
+</p>

@@ -1,0 +1,116 @@
+﻿@model MOOCollab.WebUI.ViewModels.FollowersLIstViewModel
+
+
+<h2>@ViewBag.Title</h2>
+
+@*<h5>
+    @Html.DisplayNameFor(m => m.MyName)
+    @Html.DisplayFor(m => m.MyName)
+</h5>*@
+
+
+<table>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Student / Instructor
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Members) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @{var buttonValue = "Follow";
+              var buttonTitle = "Click to folow this member.";
+              }
+
+            @if (item.IsFollowing)
+            {
+                buttonValue = "UnFollow";
+                buttonTitle = "Click to unfollow this member.";
+            }
+                
+            <span id="follow_@Html.DisplayFor(modelItem => item.Id)" >
+                <input type="button" 
+                    id="followButton"
+                    name="@Html.DisplayFor(modelItem => item.Id)"  
+                    value="@buttonValue"
+                    title="@buttonTitle"
+                />
+            </span>
+            <span id="error_@Html.DisplayFor(modelIten => item.Id)" style="color: red" ></span>
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<script type="text/javascript" >
+    //  Attach a handler to the buttons click event
+    $('input[id="followButton"]').click(function (event) {
+
+        var thisButton = $(this);
+
+        //  Get the values from the button
+        var userToFollowId = $(this).attr("name");
+
+        var followOrUnfolow = $(this).attr("value");
+
+        //  Clear out any error text
+        $('span[id="error_' + userToFollowId + '"]').html("<span></span>");
+
+        //  Define the url to the action method
+        if (followOrUnfolow == "Follow") {
+            var urlaction = '@Url.Action("FollowUserAsync","Followers", new { id = 9999 })';        //  Use 9999 as dummy so that the url will resolve.
+            }
+            else {
+                var urlaction = '@Url.Action("UnFollowUserAsync","Followers", new { id = 9999 })';        //  Use 9999 as dummy so that the url will resolve.
+            }
+            //            var urlaction = '@Url.Action("FollowUserAsync","Followers", new { id = 9999 })';        //  Use 9999 as dummy so that the url will resolve.
+
+
+            var url = urlaction.replace(9999, userToFollowId);
+
+            //  Call the method (Ajax.POST)
+            $.ajax({
+                url: url,
+                type: 'POST',
+                success: function (result) {
+                    if (result[0] === 'OK') {
+                        //  Hide the button and replace with text of Following
+                        var id = result[1];
+                        if (thisButton.attr("value") == "Follow") {
+                            thisButton.attr("value", "UnFollow");
+                            thisButton.attr("title", "Click to unfollow this member");
+                        }
+                        else {
+                            thisButton.attr("value", "Follow");
+                            thisButton.attr("title", "Click to follow this member");
+                        }
+                    }
+                },
+                error: function (result) {
+                    //var id = userToFollowId;
+                    $('span[id="error_' + userToFollowId + '"]')
+                        .html("<span>Sorry! There were problems following this member.  Please try again.</span>");
+                }
+            });
+        });
+</script>
+
